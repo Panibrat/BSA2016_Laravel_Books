@@ -15,7 +15,7 @@ use DB;
 class BookController extends Controller
 {
     public function index(){
-    	echo "BookController index";
+    	//echo "BookController index";
         //$books = Book::all();  
         $books = Book::latest()->paginate(10);
         
@@ -24,12 +24,12 @@ class BookController extends Controller
     }
     
     public function create(){
-    	echo "BookController create";
+    	//echo "BookController create";
         return view('book/create');  
     }
     
     public function store(Request $request){
-        echo "BookController store";
+        //echo "BookController store";
         $rules = array(
             'title' => 'required',
             'author' => 'required|alpha',
@@ -54,7 +54,7 @@ class BookController extends Controller
         }
     }
     public function update(Request $request, $id){
-        echo "BookController update";
+        //echo "BookController update";
         $rules = array(
             'title' => 'required',
             'author' => 'required|alpha',
@@ -63,7 +63,7 @@ class BookController extends Controller
             );
         $validator = Validator::make($request->all(), $rules);
         if($validator->fails()){
-            return Redirect::to('books/create')
+            return Redirect::to('books/'. $id. '/edit')
             ->withErrors($validator)
             ->withInput();
         } else {
@@ -79,24 +79,23 @@ class BookController extends Controller
         }
     }
     public function edit($id){
-        echo "BookController edit";
+        //echo "BookController edit";
         $book = Book::find($id);
         return view('book/edit', array('book'=>$book));
     } 
     public function destroy($id){
-        echo "BookController destroy";
+        //echo "BookController destroy";
         $book = Book::find($id);
         $book->delete();
         Session::flash('message', 'Удалили Книгу ');
         return Redirect::to('books');      
     }
     public function show($id){
-        echo "BookController show";
+        //echo "BookController show";
         $book = Book::find($id);
         return view('book/show', array('book'=>$book));
     }  
     public function returnbook($id, $id_user){
-        echo "BookController show";
         $book = Book::find($id);
         $book->client_id = null;
         $book->save();

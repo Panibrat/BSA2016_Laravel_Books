@@ -13,16 +13,16 @@
 
 
     <div class="form-group">
-        <label for="firstname">Имя: *</label>
-        <input class="form-control" placeholder="Имя" name="firstname" type="text" id="firstname">
+        {!! Form::label('firstname', 'Имя: *')!!}
+	{!! Form::text('firstname', Input::old('firstname'), array('class' => 'form-control'))!!}
     </div>
     <div class="form-group">
-        <label for="lastname">Фамилия: *</label>
-        <input class="form-control" placeholder="Фамилия" name="lastname" type="text" id="lastname">
+        {!! Form::label('lastname', 'Фамилия: *')!!}
+	{!! Form::text('lastname', Input::old('lastname'), array('class' => 'form-control'))!!}
     </div>
     <div class="form-group">
-        <label for="email">Email *</label>
-        <input class="form-control" placeholder="Email" name="email" type="text" id="email">
+        {!! Form::label('email', 'Email *')!!}
+	{!! Form::text('email', Input::old('email'), array('class' => 'form-control'))!!}
     </div>
     <div class="form-group">
         <input class="btn btn-primary"  type="submit" value="Обновить">

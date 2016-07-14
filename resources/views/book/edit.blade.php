@@ -13,24 +13,25 @@
 
 
     <div class="form-group">
-        <label for="title">Title: *</label>
-        <input class="form-control" placeholder="Title" name="title" type="text" id="title">
+        {!! Form::label('title', 'Title: *')!!}
+	{!! Form::text('title', Input::old('title'), array('class' => 'form-control'))!!}
+        
     </div>
     <div class="form-group">
-        <label for="author">Author: *</label>
-        <input class="form-control" placeholder="Author" name="author" type="text" id="author">
+        {!! Form::label('author', 'Author: *')!!}
+	{!! Form::text('author', Input::old('author'), array('class' => 'form-control'))!!}        
     </div>
     <div class="form-group">
-        <label for="year">Year *</label>
-        <input class="form-control" placeholder="Year" type="number" name="year" min="1800" max="2100" step="1" id="year">
+        {!! Form::label('year', 'Year: *')!!}
+	{!! Form::text('year', Input::old('year'), array('class' => 'form-control'))!!}  
     </div>
     <div class="form-group">
-        <label for="author">Genre: *</label>
-        <input class="form-control" placeholder="Genre" name="genre" type="text" id="genre">
+        {!! Form::label('genre', 'Genre: *')!!}
+	{!! Form::text('genre', Input::old('genre'), array('class' => 'form-control'))!!}  
     </div>
     <div class="form-group">
         <label for="year">Client_ID *</label>
-        <input class="form-control" placeholder="Client_ID" type="number" name="client_id"  id="client_id">
+        <input class="form-control" placeholder="Client_ID" type="number" name="client_id"  id="client_id" value=null>
     </div>
 
     <div class="form-group">

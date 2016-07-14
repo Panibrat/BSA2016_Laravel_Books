@@ -22,12 +22,12 @@ class UserController extends Controller
                 'count'=>$count));
     }
     public function create(){
-    	echo "UserController create";
+    	//echo "UserController create";
         return view('user/create');  
     }
     
     public function store(Request $request){
-        echo "UserController store";
+        //echo "UserController store";
         $rules = array(
             'firstname' => 'required|alpha',
             'lastname' => 'required|alpha',
@@ -50,7 +50,7 @@ class UserController extends Controller
     }
     
     public function edit($id){
-        echo "UserController edit";
+        //echo "UserController edit";
         $user = User::find($id);
         return view('user/edit', array('user'=>$user));
     } 
@@ -59,7 +59,7 @@ class UserController extends Controller
    
     
     public function update(Request $request, $id){
-        echo "UserController update";
+        //echo "UserController update";
         $rules = array(
             'firstname' => 'required|alpha',
             'lastname' => 'required|alpha',
@@ -84,7 +84,7 @@ class UserController extends Controller
         
     }
     public function destroy($id){
-        echo "UserController destroy";
+        //echo "UserController destroy";
         $user = User::find($id);
         $user->delete();
         Session::flash('message', 'Удалили юзера ');
@@ -93,7 +93,7 @@ class UserController extends Controller
     }
 
     public function show($id){
-        echo "UserController show";
+        //echo "UserController show";
         
         $user_books = DB::table('books')->where('client_id', $id)->get();
         
