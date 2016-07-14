@@ -54,7 +54,7 @@ Show Single User
 					<td>{{$book->year}}</td>
 					<td>{{$book->genre}}</td>
 
-					<td width="385">
+					<td width="200">
                                             <a class="btn btn-small btn-success" href="{{ URL::to('books/' . $book->id)}}">Show this Book</a>
                                             {!!  Form::open (['url'=>['books/'.$book->id.'/users/'.$user->id]])  !!}
                                             {!!  Form::hidden('_method', 'PUT')  !!}
