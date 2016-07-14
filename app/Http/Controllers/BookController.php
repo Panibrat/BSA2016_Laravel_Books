@@ -95,4 +95,11 @@ class BookController extends Controller
         $book = Book::find($id);
         return view('book/show', array('book'=>$book));
     }  
+    public function returnbook($id, $id_user){
+        echo "BookController show";
+        $book = Book::find($id);
+        $book->client_id = null;
+        $book->save();
+        return Redirect::to('users/'.$id_user);
+    }  
 }

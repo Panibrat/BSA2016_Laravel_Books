@@ -56,8 +56,10 @@ Show Single User
 
 					<td width="385">
                                             <a class="btn btn-small btn-success" href="{{ URL::to('books/' . $book->id)}}">Show this Book</a>
-                                            <a class="btn btn-small btn-success" href="{{ URL::to('books/' . $book->id)}}">Return this Book</a>
-                                            
+                                            {!!  Form::open (['url'=>['books/'.$book->id.'/users/'.$user->id]])  !!}
+                                            {!!  Form::hidden('_method', 'PUT')  !!}
+                                            {!!  Form::submit('Return this book',['class'=>'btn btn-warning']) !!}
+                                            {!!  Form::close() !!}
                                             
                                             
                                         </td>

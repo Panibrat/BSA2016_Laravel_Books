@@ -12,17 +12,6 @@ class BooksTableSeeder extends Seeder
     public function run()
     {
         
-        /*
-            $table->increments('id');
-            $table->string('title');
-            $table->string('author');
-            $table->integer('year');
-            $table->string('genre');            
-            $table->integer('client_id')->nullable();            
-            $table->timestamps();
-        });
-         *          */
-        
         DB::table('books')->delete(); 
         $users = array(
             array(
@@ -34,34 +23,82 @@ class BooksTableSeeder extends Seeder
                 
             ),
             array(
-                'title' => "Title#2",
-                'author' => "Author#2",
-                'year' => 1978,
+                'title' => "War and Peace",
+                'author' => "Tolstoy",
+                'year' => 1878,
                 'genre' => 'Erotic',
                 'client_id' => 4               
                 
             ),
             array(
-                'title' => "Title#3",
-                'author' => "Author#3",
-                'year' => 1978,
-                'genre' => 'Fantastic#3',
+                'title' => "Viy",
+                'author' => "Gogol",
+                'year' => 1928,
+                'genre' => 'Fantastic',
                 'client_id' => 2               
                 
             ),
             array(
-                'title' => "Title#4",
-                'author' => "Author#4",
-                'year' => 1948,
-                'genre' => 'Erotic#4',
-                'client_id' => 3               
+                'title' => "Robinson Cruso",
+                'author' => "Defo",
+                'year' => 1901,
+                'genre' => 'Adventure',
+                'client_id' => 8               
+                
+            ),
+            array(
+                'title' => "Volvo",
+                'author' => "Petterson",
+                'year' => 2001,
+                'genre' => 'Technic',
+                'client_id' => 7               
+                
+            ),
+            array(
+                'title' => "CRUD",
+                'author' => "Academy",
+                'year' => 2016,
+                'genre' => 'Adventure',
+                'client_id' => 5               
+                
+            ),
+            array(
+                'title' => "Mumu",
+                'author' => "Turgeniev",
+                'year' => 1999,
+                'genre' => 'Adventure',
+                'client_id' => 7               
+                
+            ),
+            array(
+                'title' => "Black Jack",
+                'author' => "Kristy",
+                'year' => 1961,
+                'genre' => 'Adventure',
+                'client_id' => null               
+                
+            ),
+            array(
+                'title' => "Robinson Cruso",
+                'author' => "Defo",
+                'year' => 1901,
+                'genre' => 'Adventure',
+                'client_id' => 9               
+                
+            ),
+            array(
+                'title' => "Robinson Cruso",
+                'author' => "Defo",
+                'year' => 1901,
+                'genre' => 'Adventure',
+                'client_id' => 10               
                 
             ),
             array(
                 'title' => "Go away",
                 'author' => "Jackson",
                 'year' => 2008,
-                'genre' => 'documental',
+                'genre' => 'Documental',
                 'client_id' => 1               
                 
             )

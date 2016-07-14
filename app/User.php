@@ -8,6 +8,6 @@ class User extends Model
 {
     public function books()
     {
-    return $this->hasMany('Book');
+    return $this->hasMany('App\Book');
     }
 }
