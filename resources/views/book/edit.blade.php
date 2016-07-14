@@ -34,7 +34,7 @@
     </div>
 
     <div class="form-group">
-        <input class="btn btn-primary"  type="submit" value="Добавить">
+        <input class="btn btn-primary"  type="submit" value="Изменить">
     </div>
     
  {!! Form::close() !!}   

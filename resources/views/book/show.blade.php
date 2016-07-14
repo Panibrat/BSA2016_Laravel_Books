@@ -2,6 +2,7 @@
 
 @section('pagetitle')
 Book Detales
+
 @stop
         
 @section('content')

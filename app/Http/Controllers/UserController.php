@@ -8,12 +8,12 @@ use App\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
-
+use DB;
 class UserController extends Controller
 {
     public function index(){
-    	echo "UserController index";
-        //$users = User::all();  
+    	//echo "UserController index";
+        //$users = User::all();   
         $users = User::latest()->paginate(10);  
         $count = User::count();
         
@@ -94,8 +94,17 @@ class UserController extends Controller
 
     public function show($id){
         echo "UserController show";
+        
+        $user_books = DB::table('books')->where('client_id', $id)->get();
+        
+        //dd($user_books);
+        
+        
+        
+        
+        
         $user = User::find($id);
         //dd($user);
-        return view('user/show', array('user'=>$user));
+        return view('user/show', array('user'=>$user, 'user_books'=>$user_books));
     } 
 }
